@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Emotion Analyzer</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/a2e0c7d05e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="hero-section text-center text-light py-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold mb-2 glow-text">Face Emotion Analyzer</h1>
+      <p class="lead text-muted">Detect, visualize, and understand emotions through AI-powered facial analysis</p>
+    </div>
+  </header>
+
+  <main class="container app-container py-5">
+    <div class="row g-4 align-items-stretch">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-lg-5">
+        <div class="glass-card p-4">
+          <h4 class="section-title"><i class="fa-solid fa-upload me-2"></i>Upload Image</h4>
+          <form id="uploadForm" enctype="multipart/form-data" class="mb-4">
+            <input class="form-control form-control-lg mb-3" type="file" name="image" accept="image/*" required>
+            <button class="btn btn-gradient w-100" type="submit">
+              <i class="fa-solid fa-magnifying-glass me-2"></i>Analyze Image
+            </button>
+          </form>
+
+          <hr class="divider my-4">
+
+          <h4 class="section-title"><i class="fa-solid fa-camera me-2"></i>Live Camera</h4>
+          <div class="camera-wrap mb-3">
+            <video id="camera" autoplay playsinline class="rounded"></video>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <button id="toggleCam" class="btn btn-outline-light flex-grow-1">
+              <i class="fa-solid fa-video me-2"></i>Toggle Camera
+            </button>
+            <button id="snap" class="btn btn-gradient flex-grow-1" disabled>
+              <i class="fa-solid fa-bolt me-2"></i>Capture & Analyze
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-lg-7">
+        <div class="glass-card p-4 result-section">
+          <h4 class="section-title mb-3"><i class="fa-solid fa-chart-pie me-2"></i>Results</h4>
+
+          <div id="resultCard" class="p-3 bg-light text-dark rounded shadow-inner">
+            <p id="status" class="text-muted mb-2">No analysis yet.</p>
+            <div id="emotionBadge" class="text-center mb-3"></div>
+            <div id="emotionBreakdown" class="mt-2"></div>
+            <div id="previewWrap" class="mt-3 text-center">
+              <img id="previewImage" src="" alt="preview" style="display:none;" class="img-fluid rounded shadow-sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="text-center py-4 mt-5">
+    <p class="text-muted small">Built with ❤️ using Flask • DeepFace • OpenCV • Bootstrap</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

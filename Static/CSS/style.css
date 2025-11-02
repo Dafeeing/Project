@@ -1,0 +1,134 @@
+:root {
+  --bg1: #0f2027;
+  --bg2: #203a43;
+  --bg3: #2c5364;
+  --accent1: #00eaff;
+  --accent2: #8a2be2;
+  --accent3: #ff007f;
+  --text-light: #e8f9fd;
+  --muted: #9aa8b2;
+}
+
+/* Base */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+  color: var(--text-light);
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Hero Section */
+.hero-section {
+  background: radial-gradient(circle at 30% 30%, rgba(0,234,255,0.2), transparent),
+              linear-gradient(90deg, rgba(0,234,255,0.05), rgba(255,0,200,0.05));
+}
+
+.glow-text {
+  color: var(--accent1);
+  text-shadow: 0 0 18px rgba(0,234,255,0.6);
+}
+
+/* Layout */
+.app-container {
+  max-width: 1200px;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0, 234, 255, 0.3);
+}
+
+.section-title {
+  color: var(--accent1);
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(0,234,255,0.25);
+}
+
+.divider {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.btn-gradient {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #001217;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 234, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 234, 255, 0.3);
+}
+
+.btn-outline-light {
+  border-radius: 8px;
+  border-width: 2px;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background: var(--accent1);
+  color: #001217;
+}
+
+/* Camera */
+.camera-wrap {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  overflow: hidden;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+video#camera {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Results */
+.result-section .result-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 234, 255, 0.08);
+}
+
+#emotionBadge h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent1);
+  text-shadow: 0 0 15px rgba(0, 234, 255, 0.4);
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px rgba(0,234,255,0.3); }
+  to { text-shadow: 0 0 25px rgba(0,234,255,0.8); }
+}
+
+/* Footer */
+footer {
+  background: rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+}
