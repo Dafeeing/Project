@@ -1,0 +1,5 @@
+streamlit
+flask
+deepface
+opencv-python
+numpy
